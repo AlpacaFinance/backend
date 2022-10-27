@@ -16,11 +16,13 @@ namespace AlpacaFinanceApp.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Operation> History { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new OperationMap());
         }
     }
 }
