@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "uRPBQE9fVouGldhSACgQ+p5DcVJ0ehjMbJTQKzEk8h0=",
+  "Source": "AlpacaFinance.API",
+  "BasePath": "_content/AlpacaFinance.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
