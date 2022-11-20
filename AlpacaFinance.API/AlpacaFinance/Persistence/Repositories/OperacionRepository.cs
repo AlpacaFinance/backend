@@ -13,7 +13,13 @@ public class OperacionRepository: BaseRepository, IOperacionRepository
 
     public async Task<IEnumerable<Operacion>> ListAsync()
     {
-        return await _context.Operacions.ToListAsync();
+        return await _context.Operacions
+            .Include(p=>p.Usuario)
+            .Include(p=>p.RateType)
+            .Include(p=>p.Divisa)
+            .Include(p=>p.CashFlow)
+            .Include(p=>p.GracePeriod)
+            .ToListAsync();
 
     }
 
@@ -24,7 +30,13 @@ public class OperacionRepository: BaseRepository, IOperacionRepository
 
     public async Task<Operacion> FindByIdAsync(int id)
     {
-        return await _context.Operacions.FindAsync(id);
+        return await _context.Operacions
+            .Include(p=>p.Usuario)
+            .Include(p=>p.RateType)
+            .Include(p=>p.Divisa)
+            .Include(p=>p.CashFlow)
+            .Include(p=>p.GracePeriod)
+            .FirstOrDefaultAsync(p=>p.Id==id);
     }
 
     public void Update(Operacion operacion)

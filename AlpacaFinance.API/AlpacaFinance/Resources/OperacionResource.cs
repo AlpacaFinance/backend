@@ -9,9 +9,9 @@ public class OperacionResource
     public float Import { get; set; }
     public DateTime Date { get; set; }
     
-    public Usuario Usuario { get; set; }
-    public RateType RateType { get; set; }
-    public Divisa Divisa { get; set; }
-    public CashFlow CashFlow { get; set; }
-    public GracePeriod GracePeriod { get; set; }
+    public UsuarioResource Usuario { get; set; }
+    public RateTypeResource RateType { get; set; }
+    public DivisaResource Divisa { get; set; }
+    public CashFlowResource CashFlow { get; set; }
+    public GracePeriodResource GracePeriod { get; set; }
 }

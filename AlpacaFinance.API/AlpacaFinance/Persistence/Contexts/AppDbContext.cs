@@ -86,23 +86,33 @@ public class AppDbContext : DbContext
         
         //Operacion-Usuario
         builder.Entity<Operacion>()
-            .HasOne(p => p.Usuario).WithMany(p => p.Operacions).HasForeignKey(p=>p.UsuarioId);
+            .HasOne(p => p.Usuario)
+            .WithMany(p => p.Operacions)
+            .HasForeignKey(p=>p.UsuarioId);
         
         //Operacion-RateType
         builder.Entity<Operacion>()
-            .HasOne(p => p.RateType).WithMany(p => p.Operacions).HasForeignKey(p => p.RateTypeId);
+            .HasOne(p => p.RateType)
+            .WithMany(p => p.Operacions)
+            .HasForeignKey(p => p.RateTypeId);
         
         //Operacion-GracePeriod
         builder.Entity<Operacion>()
-            .HasOne(p => p.GracePeriod).WithMany(p => p.Operacions).HasForeignKey(p => p.GracePeriodId);
+            .HasOne(p => p.GracePeriod)
+            .WithMany(p => p.Operacions)
+            .HasForeignKey(p => p.GracePeriodId);
 
         //Operacion-CashFlow
         builder.Entity<Operacion>()
-            .HasOne(p => p.CashFlow).WithMany(p => p.Operacions).HasForeignKey(p => p.CashFlowId);
+            .HasOne(p => p.CashFlow)
+            .WithMany(p => p.Operacions)
+            .HasForeignKey(p => p.CashFlowId);
         
         //Operacion-Divisa
         builder.Entity<Operacion>()
-            .HasOne(p => p.Divisa).WithOne(p => p.Operacion).HasForeignKey<Operacion>(p=>p.DivisaId);
+            .HasOne(p => p.Divisa)
+            .WithOne(p => p.Operacion)
+            .HasForeignKey<Operacion>(p=>p.DivisaId);
 
         //Apply Naming Conventions
         builder.UseSnakeCaseNamingConvention();

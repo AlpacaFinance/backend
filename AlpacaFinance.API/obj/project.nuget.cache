@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aYMqO8krMqQbuADIKl32wxgA+La2SXvJu00fDJA2DNzXASUevQJH8sfzXS8RRai2FeIhPb+EjMQau2u13wEciA==",
+  "dgSpecHash": "lDLzqPsMPZpUCUG0eZ+0gMxUypblWLroTZ3I1dwcoNnNQDZRk9V+o175mD+uV3W/IGrfViRmI9AtwBNP9cOTOA==",
   "success": true,
-  "projectFilePath": "D:\\University\\Ciclo VI\\Finanzas e Ingeneria Economica\\TF\\BackEnd-main\\AlpacaFinance.API\\AlpacaFinance.API.csproj",
+  "projectFilePath": "D:\\University\\Ciclo VI\\Finanzas e Ingeneria Economica\\TF\\backend\\AlpacaFinance.API\\AlpacaFinance.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erikr\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\erikr\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

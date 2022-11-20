@@ -6134,11 +6134,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\University\\Ciclo VI\\Finanzas e Ingeneria Economica\\TF\\BackEnd-main\\AlpacaFinance.API\\AlpacaFinance.API.csproj",
+      "projectUniqueName": "D:\\University\\Ciclo VI\\Finanzas e Ingeneria Economica\\TF\\backend\\AlpacaFinance.API\\AlpacaFinance.API.csproj",
       "projectName": "AlpacaFinance.API",
-      "projectPath": "D:\\University\\Ciclo VI\\Finanzas e Ingeneria Economica\\TF\\BackEnd-main\\AlpacaFinance.API\\AlpacaFinance.API.csproj",
+      "projectPath": "D:\\University\\Ciclo VI\\Finanzas e Ingeneria Economica\\TF\\backend\\AlpacaFinance.API\\AlpacaFinance.API.csproj",
       "packagesPath": "C:\\Users\\erikr\\.nuget\\packages\\",
-      "outputPath": "D:\\University\\Ciclo VI\\Finanzas e Ingeneria Economica\\TF\\BackEnd-main\\AlpacaFinance.API\\obj\\",
+      "outputPath": "D:\\University\\Ciclo VI\\Finanzas e Ingeneria Economica\\TF\\backend\\AlpacaFinance.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erikr\\AppData\\Roaming\\NuGet\\NuGet.Config",
