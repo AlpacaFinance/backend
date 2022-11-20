@@ -8,7 +8,7 @@ public class OperacionResource
     public decimal Percentage  { get; set; }
     public float Import { get; set; }
     public DateTime Date { get; set; }
-    
+
     public UsuarioResource Usuario { get; set; }
     public RateTypeResource RateType { get; set; }
     public DivisaResource Divisa { get; set; }

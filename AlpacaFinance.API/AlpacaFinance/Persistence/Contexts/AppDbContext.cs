@@ -10,8 +10,8 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions options) : base(options)
     {
     }
-    
-    
+
+
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Operacion> Operacions { get; set; }
     public DbSet<RateType> RateTypes { get; set; }
@@ -23,10 +23,10 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        
-        
+
+
         //Table Creation
-        
+
         builder.Entity<Usuario>().ToTable("Usuarios");
         builder.Entity<Historial>().ToTable("Historials");
         builder.Entity<RateType>().ToTable("RateTypes");
@@ -34,9 +34,9 @@ public class AppDbContext : DbContext
         builder.Entity<GracePeriod>().ToTable("GracePeriods");
         builder.Entity<CashFlow>().ToTable("CashFlows");
         builder.Entity<Operacion>().ToTable("Operacions");
-        
+
         //Property Creation
-        
+
         //Usuario
         builder.Entity<Usuario>().HasKey(p => p.Id);
         builder.Entity<Usuario>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
@@ -54,12 +54,12 @@ public class AppDbContext : DbContext
         builder.Entity<Operacion>().Property(p => p.Percentage).IsRequired();
         builder.Entity<Operacion>().Property(p => p.Import).IsRequired();
         builder.Entity<Operacion>().Property(p => p.Date).IsRequired();
-        
+
         //RateType
         builder.Entity<RateType>().HasKey(p => p.Id);
         builder.Entity<RateType>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
         builder.Entity<RateType>().Property(p => p.NameType).IsRequired().HasMaxLength(50);
-        
+
         //CashFlow
         builder.Entity<CashFlow>().HasKey(p => p.Id);
         builder.Entity<CashFlow>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
@@ -83,19 +83,19 @@ public class AppDbContext : DbContext
         builder.Entity<GracePeriod>().Property(p => p.FinalDebt).IsRequired();
 
         //Relationship Creation
-        
+
         //Operacion-Usuario
         builder.Entity<Operacion>()
             .HasOne(p => p.Usuario)
             .WithMany(p => p.Operacions)
             .HasForeignKey(p=>p.UsuarioId);
-        
+
         //Operacion-RateType
         builder.Entity<Operacion>()
             .HasOne(p => p.RateType)
             .WithMany(p => p.Operacions)
             .HasForeignKey(p => p.RateTypeId);
-        
+
         //Operacion-GracePeriod
         builder.Entity<Operacion>()
             .HasOne(p => p.GracePeriod)
@@ -107,7 +107,7 @@ public class AppDbContext : DbContext
             .HasOne(p => p.CashFlow)
             .WithMany(p => p.Operacions)
             .HasForeignKey(p => p.CashFlowId);
-        
+
         //Operacion-Divisa
         builder.Entity<Operacion>()
             .HasOne(p => p.Divisa)
