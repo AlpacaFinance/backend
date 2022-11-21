@@ -84,4 +84,12 @@ public class OperacionController : ControllerBase
         
         return Ok(resource);
     }
+    
+    [HttpGet("{id}/usuario")]
+    public async Task<IEnumerable<OperacionResource>> GetAllUsuarioIdAsync(int id)
+    {
+        var operacion = await _operacionService.ListByUsuarioId(id);
+        var resources = _mapper.Map<IEnumerable<Operacion>, IEnumerable<OperacionResource>>(operacion);
+        return resources;
+    }
 }

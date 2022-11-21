@@ -7,4 +7,6 @@ public class RateType
     
     public IList<Operacion> Operacions { get; set; } = new List<Operacion>();
     
+    public IList<Operacion> OperacionRateType { get; set; } = new List<Operacion>();
+    
 }

@@ -10,4 +10,5 @@ public class UsuarioResource
     public string Country { get; set; }
     public string Password { get; set; }
     public int Telephone { get; set; }
+    public string ImageURL { get; set; }
 }

@@ -9,11 +9,23 @@ public class OperacionService : IOperacionService
 {
     private readonly IOperacionRepository _operacionRepository;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IUsuarioRepository _usuarioRepository;
+    private readonly IRateTypeRepository _rateTypeRepository;
+    private readonly IDivisaRepository _divisaRepository;
+    private readonly ICashFlowRepository _cashFlowRepository;
+    private readonly IGracePeriodRepository _gracePeriodRepository;
 
-    public OperacionService(IOperacionRepository operacionRepository, IUnitOfWork unitOfWork)
+    public OperacionService(IOperacionRepository operacionRepository, IUnitOfWork unitOfWork,
+        IUsuarioRepository usuarioRepository, IRateTypeRepository rateTypeRepository, IDivisaRepository divisaRepository,
+        ICashFlowRepository cashFlowRepository, IGracePeriodRepository gracePeriodRepository)
     {
         _operacionRepository = operacionRepository;
         _unitOfWork = unitOfWork;
+        _usuarioRepository = usuarioRepository;
+        _rateTypeRepository = rateTypeRepository;
+        _divisaRepository = divisaRepository;
+        _cashFlowRepository = cashFlowRepository;
+        _gracePeriodRepository = gracePeriodRepository;
     }
 
     public async Task<IEnumerable<Operacion>> ListAsync()
@@ -39,6 +51,11 @@ public class OperacionService : IOperacionService
     public async Task<Operacion> FindByIdAsync(int id)
     {
         return await _operacionRepository.FindByIdAsync(id);
+    }
+    
+    public async Task<IEnumerable<Operacion>> ListByUsuarioId(int usuarioId)
+    {
+        return await _operacionRepository.FindByUsuarioId(usuarioId);
     }
 
     public async Task<OperacionResponse> UpdateAsync(int id, Operacion operacion)

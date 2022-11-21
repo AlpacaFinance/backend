@@ -28,7 +28,6 @@ public class AppDbContext : DbContext
         //Table Creation
 
         builder.Entity<Usuario>().ToTable("Usuarios");
-        builder.Entity<Historial>().ToTable("Historials");
         builder.Entity<RateType>().ToTable("RateTypes");
         builder.Entity<Divisa>().ToTable("Divisas");
         builder.Entity<GracePeriod>().ToTable("GracePeriods");
@@ -47,6 +46,7 @@ public class AppDbContext : DbContext
         builder.Entity<Usuario>().Property(p => p.Country).IsRequired().HasMaxLength(30);
         builder.Entity<Usuario>().Property(p => p.Password).IsRequired().HasMaxLength(50);
         builder.Entity<Usuario>().Property(p => p.Telephone).IsRequired().HasMaxLength(15);
+        builder.Entity<Usuario>().Property(p => p.ImageURL);
 
         //Operacion
         builder.Entity<Operacion>().HasKey(p => p.Id);
@@ -87,13 +87,13 @@ public class AppDbContext : DbContext
         //Operacion-Usuario
         builder.Entity<Operacion>()
             .HasOne(p => p.Usuario)
-            .WithMany(p => p.Operacions)
+            .WithMany(p => p.OperacionUsuario)
             .HasForeignKey(p=>p.UsuarioId);
 
         //Operacion-RateType
         builder.Entity<Operacion>()
             .HasOne(p => p.RateType)
-            .WithMany(p => p.Operacions)
+            .WithMany(p => p.OperacionRateType)
             .HasForeignKey(p => p.RateTypeId);
 
         //Operacion-GracePeriod
@@ -111,8 +111,8 @@ public class AppDbContext : DbContext
         //Operacion-Divisa
         builder.Entity<Operacion>()
             .HasOne(p => p.Divisa)
-            .WithOne(p => p.Operacion)
-            .HasForeignKey<Operacion>(p=>p.DivisaId);
+            .WithMany(p => p.OperacionDivisa)
+            .HasForeignKey(p => p.DivisaId);
 
         //Apply Naming Conventions
         builder.UseSnakeCaseNamingConvention();

@@ -39,6 +39,18 @@ public class OperacionRepository: BaseRepository, IOperacionRepository
             .FirstOrDefaultAsync(p=>p.Id==id);
     }
 
+    public async Task<IEnumerable<Operacion>> FindByUsuarioId(int usuarioId)
+    {
+        return await _context.Operacions
+            .Where(p => p.UsuarioId == usuarioId)
+            .Include(p => p.Usuario)
+            .Include(p => p.RateType)
+            .Include(p => p.Divisa)
+            .Include(p => p.CashFlow)
+            .Include(p => p.GracePeriod)
+            .ToListAsync();
+    }
+
     public void Update(Operacion operacion)
     {
         _context.Operacions.Update(operacion);

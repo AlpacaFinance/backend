@@ -9,7 +9,6 @@ public class ResourceToModelProfile : Profile
     public ResourceToModelProfile()
     {
         CreateMap<SaveUsuarioResource, Usuario>();
-        CreateMap<SaveHistorialResource, Historial>();
         CreateMap<SaveOperacionResource, Operacion>();
         CreateMap<SaveDivisaResource, Divisa>();
         CreateMap<SaveCashFlowResource, CashFlow>();

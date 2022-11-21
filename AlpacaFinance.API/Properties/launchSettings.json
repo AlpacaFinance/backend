@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Lawyeed.API": {
+    "AlpacaFinance.API": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

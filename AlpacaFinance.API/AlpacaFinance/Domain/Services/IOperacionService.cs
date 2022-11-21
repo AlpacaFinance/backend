@@ -8,6 +8,7 @@ public interface IOperacionService
     Task<IEnumerable<Operacion>> ListAsync();
     Task<OperacionResponse> SaveAsync(Operacion operacion);
     Task<Operacion> FindByIdAsync(int id);
+    Task<IEnumerable<Operacion>> ListByUsuarioId(int usuarioId);
     Task<OperacionResponse> UpdateAsync(int id, Operacion operacion);
     Task<OperacionResponse> DeleteAsync(int id);
 }
